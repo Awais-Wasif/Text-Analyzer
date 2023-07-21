@@ -35,7 +35,7 @@ export default function About(prop) {
 
   return (
     prop.check && <div className="container" style={mystyle}>
-        <button type="button" onClick={ToggleStyle} class="btn btn-secondary">{buttonText}</button>
+        <button type="button" onClick={ToggleStyle} className="btn btn-secondary">{buttonText}</button>
     </div>
   )
 }
