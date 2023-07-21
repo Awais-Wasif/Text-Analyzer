@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(prop) {
 
     const [mystyle,setmyStyle] = useState({
         color : 'black',
@@ -34,7 +34,7 @@ export default function About() {
 
 
   return (
-    <div className="container" style={mystyle}>
+    prop.check && <div className="container" style={mystyle}>
         <button type="button" onClick={ToggleStyle} class="btn btn-secondary">{buttonText}</button>
     </div>
   )

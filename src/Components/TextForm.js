@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import Alert from './Alert';
 
 export default function TextForm(props) {
   const [text, setText] = useState('');
+  const [alertText, setalertText] = useState('')
+
+  function showAlert(_text)
+  {
+    setalertText(text);
+  }
 
    function changeToUpperCase() {
     let _changeText = text.toUpperCase();
     setText(_changeText);
     console.log("Upper case Done");
+    setalertText("Successfully changed to upper case")
   }
 
    function changeToLowerCase()
@@ -14,6 +22,7 @@ export default function TextForm(props) {
     let _changeText = text.toLowerCase();
     setText(_changeText);
     console.log("Lower case Done");
+    setalertText("Successfully changed to lower case")
   }
 
    function clearText()
@@ -29,6 +38,7 @@ export default function TextForm(props) {
 
   return (
     <>
+       <Alert show={alertText} mode = {props.mode}></Alert>
       <div className="container">
         <label className={props.mode === 'dark'?'text-white':'text-dark'} >Enter text to analyze</label>
         <textarea
