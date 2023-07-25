@@ -32,11 +32,12 @@ export default function TextForm(props) {
   }
 
   const handleOnChange = (event) => {
-    
+
     console.log("On change");
     setText(event.target.value);
   }
 
+  //This is the return function
   return (
     <>
        <Alert show={alertText} mode = {props.mode}></Alert>
